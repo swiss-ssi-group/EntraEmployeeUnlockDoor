@@ -20,10 +20,18 @@ public class UnlockedModel : PageModel
     [BindProperty]
     public string? StatePresented { get; set; }
 
+    [BindProperty]
+    public string? NameSurnameMessage { get; set; }
+
     public async Task<IActionResult> OnGetAsync()
     {
         var upn = HttpContext.User.FindFirst("RevocationId");
         var doorCode = HttpContext.User.FindFirst("DoorCode");
+
+        var givenName = HttpContext.User.FindFirst("GivenName");
+        var surname = HttpContext.User.FindFirst("Surname");
+
+        NameSurnameMessage = $"Have a nice day {givenName!.Value} {surname!.Value}";
 
         // Validate door code and VC claims
         (bool IsValid, string Error) validation = _validateUserAndDoorCodeService
