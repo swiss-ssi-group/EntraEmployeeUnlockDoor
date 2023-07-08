@@ -39,10 +39,9 @@ ngrok http https://localhost:5002
 
 ## Links
 
-
 https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/how-to-use-quickstart-multiple
 
-https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/admin-api#claimmapping-type
+https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/admin-api#attestations-type
 
 https://github.com/swiss-ssi-group/AzureADVerifiableCredentialsAspNetCore
 

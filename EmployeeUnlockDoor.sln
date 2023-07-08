@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solutionItems", "_solution
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_customSelfIssuedAttestation", "_customSelfIssuedAttestation", "{647FD114-6F00-4378-86A2-9E8CD755D863}"
+	ProjectSection(SolutionItems) = preProject
+		_customSelfIssuedAttestation\self-issued-attestation-rules-settings.json = _customSelfIssuedAttestation\self-issued-attestation-rules-settings.json
+		_customSelfIssuedAttestation\self-issued-attestation-settings.json = _customSelfIssuedAttestation\self-issued-attestation-settings.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,21 @@
+{
+  "attestations": {
+    "selfIssued": {
+      "mapping": [
+        {
+          "outputClaim": "doorCode",
+          "required": true,
+          "inputClaim": "doorCode",
+          "indexed": false
+        }
+      ],
+      "required": false
+    }
+  },
+  "validityInterval": 2592000,
+  "vc": {
+    "type": [
+      "DoorCode"
+    ]
+  }
+}
