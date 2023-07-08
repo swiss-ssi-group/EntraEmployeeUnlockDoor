@@ -2,9 +2,19 @@
 var qrcode = new QRCode("qrcode", {width: 300, height: 300 });
 var respPresentationReq = null;
 
+function verifyEmployeeUnlockDoorSubmit(e) {
+    e.preventDefault();
+
+    let form = document.getElementById("verifyEmployeeUnlockDoor");
+
+    if (form) form.submit();
+
+    return false;
+}
+
 let buttonVerifyEmployeeUnlockDoorSubmit = document.getElementById("buttonVerifyEmployeeUnlockDoor");
 if (buttonVerifyEmployeeUnlockDoorSubmit) {
-    buttonVerifyEmployeeUnlockDoorSubmit.onclick = buttonVerifyEmployeeUnlockDoorSubmit;
+    buttonVerifyEmployeeUnlockDoorSubmit.onclick = verifyEmployeeUnlockDoorSubmit;
 }
 
 function displayInit() {
