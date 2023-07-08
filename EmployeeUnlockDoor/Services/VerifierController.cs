@@ -150,7 +150,8 @@ public class VerifierController : Controller
         else // "DoorCode"
         {
             var data = verifiedCredentialsData!.Claims.Deserialize<DoorCodeClaims>();
-            cacheData.DoorCode = data!.DoorCode;
+            if(data!.DoorCode != null)
+                cacheData.DoorCode = data.DoorCode;
         }
     }
 

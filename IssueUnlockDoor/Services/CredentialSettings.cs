@@ -1,4 +1,4 @@
-﻿using Microsoft.Identity.Web;
+using Microsoft.Identity.Web;
 using System.Security.Cryptography.X509Certificates;
 
 namespace IssueUnlockDoor;
@@ -21,15 +21,15 @@ public class CredentialSettings
 
     public bool AppUsesClientSecret(CredentialSettings config)
     {
-        string clientSecretPlaceholderValue = "[Enter here a client secret for your application]";
-        string certificatePlaceholderValue = "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]";
+        var clientSecretPlaceholderValue = "[Enter here a client secret for your application]";
+        var certificatePlaceholderValue = "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]";
 
-        if (!String.IsNullOrWhiteSpace(config.ClientSecret) && config.ClientSecret != clientSecretPlaceholderValue)
+        if (!string.IsNullOrWhiteSpace(config.ClientSecret) && config.ClientSecret != clientSecretPlaceholderValue)
         {
             return true;
         }
 
-        else if (!String.IsNullOrWhiteSpace(config.CertificateName) && config.CertificateName != certificatePlaceholderValue)
+        else if (!string.IsNullOrWhiteSpace(config.CertificateName) && config.CertificateName != certificatePlaceholderValue)
         {
             return false;
         }
