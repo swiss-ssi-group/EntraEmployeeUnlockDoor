@@ -20,6 +20,11 @@
       "claim": "vc.credentialSubject.doorCode",
       "label": "Door code",
       "type": "String"
+    },
+    {
+      "claim": "vc.credentialSubject.name",
+      "label": "Name",
+      "type": "String"
     }
   ]
 }
