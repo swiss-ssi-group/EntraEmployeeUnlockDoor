@@ -1,0 +1,65 @@
+﻿@{
+    var nonce = Context.GetNonce();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Employee Unlock Door" />
+    <meta property="og:url" content="https://issueverifiableemployee.azurewebsites.net" />
+    <meta property="og:image" content="https://issueverifiableemployee.azurewebsites.net/android-chrome-192x192.png">
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:site_name" content="Employee Unlock Door" />
+    <meta property="og:description" content="Employee Unlock Door" />
+    <meta name="twitter:site" content="damienbod" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Employee Unlock Door" />
+    <meta name="twitter:title" content="Employee Unlock Door 2023" />
+    <meta name="robots" content="noindex,nofollow">
+
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" nonce="@nonce">
+    <link rel="stylesheet" href="~/lib/open-iconic/font/css/open-iconic-bootstrap.min.css" nonce="@nonce">
+
+    <!-- Add Material font (Roboto) and Material icon as needed -->
+    <link rel="stylesheet" href="~/css/googlefontsroboto.css" nonce="@nonce">
+    <link rel="stylesheet" href="~/css/fonts.google.icons.css" nonce="@nonce">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" nonce="@nonce" />
+    <link rel="stylesheet" href="~/css/site.css" nonce="@nonce" />
+    <link rel="stylesheet" href="~/lib/materialize/dist/materialize.min.css" nonce="@nonce">
+    <link rel="stylesheet" href="~/css/toastr.min.css" nonce="@nonce" />
+    <link rel="stylesheet" href="~/css/main.css" nonce="@nonce" />
+
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <base href="/" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/UnlockDoor/UnlockDoor">Unlock door</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js" nonce="@nonce"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" nonce="@nonce"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" nonce="@nonce"></script>
+    <script src="~/lib/materialize/dist/materialize.min.js" nonce="@nonce"></script>
+    <script src="~/js/toastr.min.js" nonce="@nonce"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

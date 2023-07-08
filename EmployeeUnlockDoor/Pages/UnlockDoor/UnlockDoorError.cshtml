@@ -1,0 +1,20 @@
+﻿@page
+@model EmployeeUnlockDoor.Pages.UnlockDoor.UnlockDoorErrorModel
+
+
+<div id="message-error">
+    <div class="alert alert-danger" role="alert">
+        <div class="text-danger h4 validation-summary-errors" data-valmsg-summary="true">
+            <ul>
+                <li id="messageError">@Model.ErrorMessage</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-12 col-md-auto mb-4 order-last order-md-first">
+        <a class="c-button-custom c-button-custom--inverted" href="../Index">Back</a>
+    </div>
+
+</div>

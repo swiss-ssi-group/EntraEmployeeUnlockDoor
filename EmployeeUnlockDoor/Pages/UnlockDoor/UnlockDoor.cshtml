@@ -1,0 +1,73 @@
+﻿@page
+@using EmployeeUnlockDoor.Pages.Shared
+@model EmployeeUnlockDoor.Pages.UnlockDoor.UnlockDoorModel
+@{
+    ViewData["Title"] = "Employee Unlock Door";
+    var nonce = HttpContext.GetNonce();
+}
+
+<div style="text-align: center;">
+
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">Validate your employee status</span>
+        </div>
+    </div>
+
+    <div id="message-generate-vc-presentation">
+        <p>Initializing employee verification process</p>
+    </div>
+
+    <div id="message-error" style="display: none">
+        <div class="alert alert-danger" role="alert">
+            <div class="text-danger h4 validation-summary-errors" data-valmsg-summary="true">
+                <ul>
+                    <li id="messageError">ERROR</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="message-wrapper" style="display: none">
+        <div id="message-wrapper-icon" style="display: none">
+            <i class="fas fa-user-check green icon-text-large"></i>
+        </div>
+        
+        <div id="messageDisplay"></div>
+        <br />
+        <div id="subject"></div>
+    </div>
+
+    <div id="qrText"></div>
+
+    <a id="deeplink" style="display: none;margin-top: 10px;">Tap to open Authenticator on mobile</a>
+</div>
+
+<div class="container">
+    <div class="row">   
+        <div style="width: 300px">
+            <div id="qrcode" style="text-align: center"></div>
+        </div>
+    </div>
+</div>
+
+<div id="pinCodeText" style="display: none"></div>
+
+<form method="post" id="verifyEmployeeUnlockDoor" action="" novalidate>
+    <input type="hidden" required id="statePresented" name="statePresented"/>
+</form>
+
+<div class="row">
+    <div class="col col-12 col-md-auto mb-4 order-last order-md-first">
+        <a class="c-button-custom c-button-custom--inverted" href="@Model.AbortPortalUrl">Reset</a>
+    </div>
+    <div class="col col-12 col-md-auto mb-4 order-first order-md-last">
+        <button type="button" id="buttonVerifyEmployeeUnlockDoor" value="Submit form" class="c-button-custom">Continue</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="qrcode.min.js" nonce="@nonce"></script>
+    <script src="verifier.js" nonce="@nonce"></script>
+}
