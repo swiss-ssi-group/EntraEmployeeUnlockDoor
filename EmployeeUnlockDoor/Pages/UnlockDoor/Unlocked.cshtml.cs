@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Authentication;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EmployeeUnlockDoor.Pages.UnlockDoor;
 
@@ -24,12 +25,14 @@ public class UnlockedModel : PageModel
         var upn = HttpContext.User.FindFirst("RevocationId");
         var doorCode = HttpContext.User.FindFirst("DoorCode");
 
-        // Validate door code and VC claims 
-        if (!_validateUserAndDoorCodeService
-                .PaycheckIdAndUserAreValid(upn!.Value, doorCode!.Value))
+        // Validate door code and VC claims
+        (bool IsValid, string Error) validation = _validateUserAndDoorCodeService
+                .PaycheckIdAndUserAreValid(upn!.Value, doorCode!.Value);
+
+        if (!validation.IsValid)
         {
             await HttpContext.SignOutAsync();
-            return Redirect($"~/Paycheck/PaycheckError");
+            return Redirect($"~/UnlockDoor/UnlockDoorError/{validation.Error}");
         }
 
         // Data should be fetched from a DB or an ERP service etc.

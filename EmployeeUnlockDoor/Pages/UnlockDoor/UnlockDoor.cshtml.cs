@@ -49,9 +49,7 @@ public class UnlockDoorModel : PageModel
             new Claim("Mail", credentialData!.Employee.Mail, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("Surname", credentialData!.Employee.Surname, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("Photo", credentialData!.Employee.Photo, ClaimValueTypes.String, "damienbodsharepoint"),
-            new Claim("DoorCode", credentialData!.DoorCode, ClaimValueTypes.String, "damienbodsharepoint"),
-
-            
+            new Claim("DoorCode", credentialData!.DoorCode, ClaimValueTypes.String, "damienbodsharepoint"), 
         };
 
         var userIdentity = new ClaimsIdentity(claims, "entraemployee");
