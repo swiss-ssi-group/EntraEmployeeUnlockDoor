@@ -50,7 +50,7 @@ https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/
 
 https://ssi-start.adnovum.com/data
 
-https://github.com/e-id-admin/public-sandbox-trustinfrastructure#14
+https://github.com/e-id-admin/public-sandbox-trustinfrastructure/discussions/14
 
 https://openid.net/specs/openid-connect-self-issued-v2-1_0.html
 
