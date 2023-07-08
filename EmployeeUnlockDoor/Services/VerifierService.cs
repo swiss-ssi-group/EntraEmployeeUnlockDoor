@@ -29,6 +29,7 @@ public class VerifierService
         payload.Registration.ClientName = "VerifiedEmployee";
         payload.Authority = _credentialSettings.VerifierAuthority;
 
+        // First credential
         var requestedCredentials = new RequestedCredentials
         {
             CrendentialsType = "VerifiedEmployee",
@@ -36,6 +37,15 @@ public class VerifierService
         };
         requestedCredentials.AcceptedIssuers.Add(_credentialSettings.IssuerAuthority);
         payload.RequestedCredentials.Add(requestedCredentials);
+
+        // Second credential
+        var requestedCredentialsNdl = new RequestedCredentials
+        {
+            CrendentialsType = "Iso18013DriversLicense",
+            Purpose = "So we can see that you a veriable credentials NDL"
+        };
+        requestedCredentialsNdl.AcceptedIssuers.Add(_credentialSettings.IssuerAuthority);
+        payload.RequestedCredentials.Add(requestedCredentialsNdl);
 
         return payload;
     }

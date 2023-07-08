@@ -27,8 +27,8 @@ public class CredentialSettings
     /// <returns></returns>
     public bool AppUsesClientSecret(CredentialSettings config)
     {
-        string clientSecretPlaceholderValue = "[Enter here a client secret for your application]";
-        string certificatePlaceholderValue = "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]";
+        var clientSecretPlaceholderValue = "[Enter here a client secret for your application]";
+        var certificatePlaceholderValue = "[Or instead of client secret: Enter here the name of a certificate (from the user cert store) as registered with your application]";
 
         if (!string.IsNullOrWhiteSpace(config.ClientSecret) && config.ClientSecret != clientSecretPlaceholderValue)
         {

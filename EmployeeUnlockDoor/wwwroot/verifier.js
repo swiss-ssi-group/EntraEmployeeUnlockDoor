@@ -2,6 +2,11 @@
 var qrcode = new QRCode("qrcode", {width: 300, height: 300 });
 var respPresentationReq = null;
 
+let buttonVerifyEmployeeUnlockDoorSubmit = document.getElementById("buttonVerifyEmployeeUnlockDoor");
+if (buttonVerifyEmployeeUnlockDoorSubmit) {
+    buttonVerifyEmployeeUnlockDoorSubmit.onclick = buttonVerifyEmployeeUnlockDoorSubmit;
+}
+
 function displayInit() {
     console.log('displayInit');
     document.getElementById('message-wrapper').style.display = "none";  
