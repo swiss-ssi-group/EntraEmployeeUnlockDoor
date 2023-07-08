@@ -38,6 +38,7 @@ public class IssuerService
         payload.Registration.ClientName = "Door Code";
         payload.Authority = _credentialSettings.IssuerAuthority;
 
+        payload.Claims.DoorCode = "1212";
         return payload;
     }
 
