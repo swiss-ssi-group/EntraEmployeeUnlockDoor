@@ -41,8 +41,8 @@ public class VerifierService
         // Second credential
         var requestedCredentialsNdl = new RequestedCredentials
         {
-            CrendentialsType = "Iso18013DriversLicense",
-            Purpose = "So we can see that you a veriable credentials NDL"
+            CrendentialsType = "DoorCode",
+            Purpose = "Door code to gain access"
         };
         requestedCredentialsNdl.AcceptedIssuers.Add(_credentialSettings.IssuerAuthority);
         payload.RequestedCredentials.Add(requestedCredentialsNdl);
