@@ -1,3 +1,5 @@
+using System.Globalization;
+using System.Security.Cryptography;
 using IssueUnlockDoor.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
@@ -25,7 +27,15 @@ public class IssuerService
     public IssuanceRequestPayload GetIssuanceRequestPayload(HttpRequest request)
     {
         var payload = new IssuanceRequestPayload();
-  
+        var length = 4;
+        var pinMaxValue = (int)Math.Pow(10, length) - 1;
+        var randomNumber = RandomNumberGenerator.GetInt32(1, pinMaxValue);
+        var newpin = string.Format(CultureInfo.InvariantCulture,
+            "{0:D" + length.ToString(CultureInfo.InvariantCulture) + "}", randomNumber);
+
+        payload.Pin.Length = length;
+        payload.Pin.Value = newpin;
+
         payload.CredentialsType = "DoorCode";
 
         payload.Manifest = $"{_credentialSettings.CredentialManifest}";

@@ -70,6 +70,11 @@ public class IssuerController : ControllerBase
                 {
                     _log.LogTrace("succesfully called Request API");
 
+                    if (payload.Pin.Value != null)
+                    {
+                        response.Pin = payload.Pin.Value;
+                    }
+
                     response.Id = payload.Callback.State;
 
                     var cacheData = new CacheData

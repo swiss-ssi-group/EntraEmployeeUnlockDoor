@@ -21,6 +21,8 @@ public class IssuanceRequestPayload
     public string CredentialsType { get; set; } = string.Empty;
     [JsonPropertyName("manifest")]
     public string Manifest { get; set; } = string.Empty;
+    [JsonPropertyName("pin")]
+    public Pin Pin { get; set; } = new Pin();
     [JsonPropertyName("claims")]
     public CredentialsClaims Claims { get; set; } = new CredentialsClaims();
 }
