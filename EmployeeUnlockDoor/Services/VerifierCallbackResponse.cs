@@ -1,3 +1,4 @@
+using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using EmployeeUnlockDoor.Services;
 
@@ -22,7 +23,6 @@ public class VerifierCallbackResponse
 
     [JsonPropertyName("verifiedCredentialsData")]
     public List<VerifiedCredentialsData> VerifiedCredentialsData { get; set; } = new List<VerifiedCredentialsData>();
-
 }
 
 public class CallbackError
@@ -42,6 +42,29 @@ public class VerifiedCredentialsData
     public List<string> CredentialTypes { get; set; } = new List<string>();
 
     [JsonPropertyName("claims")]
-    public EmployeeClaims Claims { get; set; } = new EmployeeClaims();
-
+    public JsonObject Claims { get; set; } = new JsonObject();
 }
+
+//public class VerifiedCredentialsEmployeeData
+//{
+//    [JsonPropertyName("authority")]
+//    public string Authority { get; set; } = string.Empty;
+
+//    [JsonPropertyName("type")]
+//    public List<string> CredentialTypes { get; set; } = new List<string>();
+
+//    [JsonPropertyName("claims")]
+//    public EmployeeClaims Claims { get; set; } = new EmployeeClaims();
+//}
+
+//public class VerifiedCredentialsDoorCodeData
+//{
+//    [JsonPropertyName("authority")]
+//    public string Authority { get; set; } = string.Empty;
+
+//    [JsonPropertyName("type")]
+//    public List<string> CredentialTypes { get; set; } = new List<string>();
+
+//    [JsonPropertyName("claims")]
+//    public DoorCodeClaims Claims { get; set; } = new DoorCodeClaims();
+//}

@@ -7,6 +7,7 @@ using VerifierInsuranceCompany.Services;
 using System.Text.Json;
 using System.Globalization;
 using Microsoft.Extensions.Caching.Distributed;
+using EmployeeUnlockDoor.Services;
 
 namespace VerifierInsuranceCompany;
 
@@ -117,14 +118,8 @@ public class VerifierController : Controller
                     Subject = verifierCallbackResponse.Subject
                 };
 
-                cacheData.Employee.Photo = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.Photo;
-                cacheData.Employee.RevocationId = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.RevocationId;
-                cacheData.Employee.PreferredLanguage = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.PreferredLanguage;
-                cacheData.Employee.Surname = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.Surname;
-                cacheData.Employee.GivenName = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.GivenName;
-                cacheData.Employee.DisplayName = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.DisplayName;
-                cacheData.Employee.Mail = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.Mail;
-                cacheData.Employee.JobTitle = verifierCallbackResponse.VerifiedCredentialsData!.FirstOrDefault()!.Claims.JobTitle;
+                ParseClaimsData(verifierCallbackResponse!.VerifiedCredentialsData[0], cacheData);
+                ParseClaimsData(verifierCallbackResponse!.VerifiedCredentialsData[1], cacheData);
 
                 CacheData.AddToCache(verifierCallbackResponse.State, _distributedCache, cacheData);
             }
@@ -134,6 +129,28 @@ public class VerifierController : Controller
         catch (Exception ex)
         {
             return BadRequest(new { error = "400", error_description = ex.Message });
+        }
+    }
+
+    private static void ParseClaimsData(VerifiedCredentialsData verifiedCredentialsData, CacheData cacheData)
+    {
+        if (verifiedCredentialsData.CredentialTypes.Contains("VerifiedEmployee"))
+        {
+            var data = verifiedCredentialsData!.Claims.Deserialize<EmployeeClaims>();
+
+            cacheData.Employee.Photo = data!.Photo;
+            cacheData.Employee.RevocationId = data!.RevocationId;
+            cacheData.Employee.PreferredLanguage = data!.PreferredLanguage;
+            cacheData.Employee.Surname = data!.Surname;
+            cacheData.Employee.GivenName = data!.GivenName;
+            cacheData.Employee.DisplayName = data!.DisplayName;
+            cacheData.Employee.Mail = data!.Mail;
+            cacheData.Employee.JobTitle = data!.JobTitle;
+        }
+        else // "DoorCode"
+        {
+            var data = verifiedCredentialsData!.Claims.Deserialize<DoorCodeClaims>();
+            cacheData.DoorCode = data!.DoorCode;
         }
     }
 

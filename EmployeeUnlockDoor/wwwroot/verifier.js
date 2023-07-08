@@ -48,6 +48,9 @@ function displayPresentationVerified() {
     document.getElementById('statePresented').value = respPresentationReq.id;
     document.getElementById('messageDisplay').innerHTML = '';
 
+    document.getElementById('butUnlock').style.display = "block";
+    
+
     // stepper control button
     document.getElementById("buttonVerifyEmployeeUnlockDoor").style.display = 'block';
 }
