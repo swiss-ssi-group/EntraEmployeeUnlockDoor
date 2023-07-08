@@ -1,5 +1,18 @@
 {
   "attestations": {
+    "idTokenHints": [
+      {
+        "mapping": [
+          {
+            "outputClaim": "name",
+            "required": false,
+            "inputClaim": "$.name",
+            "indexed": false
+          }
+        ],
+        "required": false
+      }
+    ],
     "selfIssued": {
       "mapping": [
         {

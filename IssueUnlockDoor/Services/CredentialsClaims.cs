@@ -8,5 +8,8 @@ namespace IssueUnlockDoor.Services;
 public class CredentialsClaims
 {
     [JsonPropertyName("doorCode")]
-    public string DoorCode { get; set; } = string.Empty;
+    public string? DoorCode { get; set; } = string.Empty;
+
+    [JsonPropertyName("name")]
+    public string Name { get; set; } = string.Empty;
 }
