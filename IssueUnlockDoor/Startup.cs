@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Identity.Web;
-
 namespace IssueUnlockDoor;
 
 public class Startup
@@ -15,26 +11,10 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.Configure<KestrelServerOptions>(options =>
-        {
-            options.AllowSynchronousIO = true;
-        });
-
         services.Configure<CredentialSettings>(Configuration.GetSection("CredentialSettings"));
+        services.AddHttpClient();
         services.AddScoped<IssuerService>();
-
         services.AddDistributedMemoryCache();
-
-        services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-            .AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureAd"))
-            .EnableTokenAcquisitionToCallDownstreamApi(new string[] { "user.read"})
-            .AddMicrosoftGraph()
-            .AddDistributedTokenCaches();
-
-        services.AddAuthorization(options =>
-        {
-            options.FallbackPolicy = options.DefaultPolicy;
-        });
 
         services.Configure<CookiePolicyOptions>(options =>
         {

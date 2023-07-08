@@ -26,7 +26,7 @@ public class IssuerService
     {
         var payload = new IssuanceRequestPayload();
   
-        payload.CredentialsType = "UnlockDoor";
+        payload.CredentialsType = "DoorCode";
 
         payload.Manifest = $"{_credentialSettings.CredentialManifest}";
 
@@ -35,7 +35,7 @@ public class IssuerService
         payload.Callback.Url = $"{host}/api/issuer/issuanceCallback";
         payload.Callback.Headers.ApiKey = _credentialSettings.VcApiCallbackApiKey;
 
-        payload.Registration.ClientName = "Verifiable Credential Employee";
+        payload.Registration.ClientName = "Door Code";
         payload.Authority = _credentialSettings.IssuerAuthority;
 
         return payload;
