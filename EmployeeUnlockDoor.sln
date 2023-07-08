@@ -5,6 +5,12 @@ VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeUnlockDoor", "EmployeeUnlockDoor\EmployeeUnlockDoor.csproj", "{86C57247-0232-4C80-B41C-CFE15849329A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solutionItems", "_solutionItems", "{EFC835A5-75F8-4C74-AD33-A69CEF4E899F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
