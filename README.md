@@ -1,5 +1,26 @@
 # Entra Verified ID Employee Unlock Door flow
 
+## Deployment testing
+
+### Get onboarded to the Azure AD tenant
+
+Contact the HR, or your IT admin and ask nicely for an account.
+
+### Get your verified employee credential
+
+https://issueverifiableemployee.azurewebsites.net
+
+### Get your door unlocker employee credential
+
+Code for demo: 2023
+
+https://issueunlockdoor.azurewebsites.net
+
+### View your paycheck using the verified employee credential and the door unlocker credential
+
+https://employeeunlockdoor.azurewebsites.net
+
+
 
 ## History
 
