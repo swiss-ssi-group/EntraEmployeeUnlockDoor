@@ -1,0 +1,76 @@
+﻿@{
+    var nonce = this.Context.GetNonce();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Verified ID Unlock door" />
+    <meta property="og:url" content="https://issueverifiableemployee.azurewebsites.net" />
+    <meta property="og:image" content="https://issueverifiableemployee.azurewebsites.net/android-chrome-192x192.png">
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:site_name" content="Verified ID Unlock door" />
+    <meta property="og:description" content="Verified ID Unlock door" />
+    <meta name="twitter:site" content="damienbod" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Verified ID Unlock door" />
+    <meta name="twitter:title" content="Verified ID Unlock door 2023" />
+    <meta name="robots" content="noindex,nofollow">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/IssueUnlockDoor.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fontawesome-free-5.4.1-web/css/all.min.css" asp-append-version="true" />
+
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Unlock door</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UnlockDoorCredentials"
+                                id="tooltip-user"
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="get credentials">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                Get door unlocking credentials
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Employee Verified ID credential
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js" nonce="@nonce"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" nonce="@nonce"></script>
+    <script src="~/js/site.js" asp-append-version="true" nonce="@nonce"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

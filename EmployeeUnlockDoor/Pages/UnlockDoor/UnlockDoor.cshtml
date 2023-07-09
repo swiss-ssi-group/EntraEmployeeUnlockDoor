@@ -27,7 +27,6 @@
             </div>
         </div>
     </div>
-    
 
     <div id="message-wrapper" style="display: none">
         <div id="message-wrapper-icon" style="display: none">
@@ -46,7 +45,7 @@
 
 <div class="container">
     <div class="row">   
-        <div style="width: 300px">
+        <div style="width: 300px;padding:0">
             <div id="qrcode" style="text-align: center"></div>
         </div>
     </div>
@@ -58,12 +57,14 @@
     <input type="hidden" required id="statePresented" name="statePresented"/>
 </form>
 
-<div class="row">
-    <div class="col col-12 col-md-auto mb-4 order-last order-md-first">
-        <a class="c-button-custom c-button-custom--inverted" href="@Model.AbortPortalUrl">Reset</a>
-    </div>
-    <div class="col col-12 col-md-auto mb-4 order-first order-md-last">
-        <button type="button" id="buttonVerifyEmployeeUnlockDoor" value="Submit form" class="c-button-custom">Unlock</button>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-md-auto mb-4 order-last order-md-first">
+            <a class="c-button-custom c-button-custom--inverted" href="@Model.AbortPortalUrl">Reset</a>
+        </div>
+        <div id="butUnlock" style="display: none" class="col col-12 col-md-auto mb-4 order-first order-md-last">
+            <button type="button" id="buttonVerifyEmployeeUnlockDoor" value="Submit form" class="c-button-custom">Unlock</button>
+        </div>
     </div>
 </div>
 

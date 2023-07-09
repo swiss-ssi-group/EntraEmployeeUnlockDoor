@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_customSelfIssuedAttestatio
 		_customSelfIssuedAttestation\self-issued-attestation-settings.json = _customSelfIssuedAttestation\self-issued-attestation-settings.json
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueUnlockDoor", "IssueUnlockDoor\IssueUnlockDoor.csproj", "{1764414F-319B-4DE0-955B-D6BD72C7E2D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{86C57247-0232-4C80-B41C-CFE15849329A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86C57247-0232-4C80-B41C-CFE15849329A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86C57247-0232-4C80-B41C-CFE15849329A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1764414F-319B-4DE0-955B-D6BD72C7E2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1764414F-319B-4DE0-955B-D6BD72C7E2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1764414F-319B-4DE0-955B-D6BD72C7E2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1764414F-319B-4DE0-955B-D6BD72C7E2D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

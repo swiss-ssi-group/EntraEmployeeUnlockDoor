@@ -18,6 +18,8 @@ public class CacheData
     public string Subject { get; set; } = string.Empty;
     [JsonPropertyName("employeeClaims")]
     public EmployeeClaims Employee { get; set; } = new EmployeeClaims();
+    [JsonPropertyName("doorCode")]
+    public string DoorCode { get; set; } = string.Empty;
 
     public static void AddToCache(string key, IDistributedCache cache, CacheData cacheData)
     {

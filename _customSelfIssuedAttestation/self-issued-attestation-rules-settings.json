@@ -9,7 +9,7 @@
           "indexed": false
         }
       ],
-      "required": false
+      "required": true
     }
   },
   "validityInterval": 2592000,
