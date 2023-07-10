@@ -27,10 +27,13 @@ https://employeeunlockdoor.azurewebsites.net
 
 ## User secrets and verify configuration
 
+Select the correct endpoint depending to the business of the application.
+
 ```
 {
   "CredentialSettings": {
     "Endpoint": "https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createPresentationRequest",
+    //  "Endpoint": "https://verifiedid.did.msidentity.com/v1.0/verifiableCredentials/createIssuanceRequest",
     "VCServiceScope": "bbb94529-53a3-4be5-a069-7eaf2712b826/.default",
     "Instance": "https://login.microsoftonline.com/{0}",
     "TenantId": "YOURTENANTID",
