@@ -20,9 +20,9 @@ https://issueunlockdoor.azurewebsites.net
 
 https://employeeunlockdoor.azurewebsites.net
 
-
 ## History
 
+- 2023-07-27 Updated packages
 - 2023-07-08 Initial version
 
 ## User secrets and verify configuration
