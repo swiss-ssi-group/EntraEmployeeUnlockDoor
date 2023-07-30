@@ -64,6 +64,8 @@ public class UnlockDoorModel : PageModel
                 AllowRefresh = false
             });
 
+        CacheData.RemoveFromCache(StatePresented, _distributedCache);
+
         return Redirect($"~/UnlockDoor/Unlocked");
     }
 }

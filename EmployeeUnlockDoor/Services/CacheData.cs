@@ -39,4 +39,13 @@ public class CacheData
 
         return null;
     }
+
+    public static void RemoveFromCache(string key, IDistributedCache cache)
+    {
+        var item = cache.GetString(key);
+        if (item != null)
+        {
+            cache.Remove(key);
+        }
+    }
 }
