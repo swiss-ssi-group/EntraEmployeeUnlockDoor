@@ -1,18 +1,58 @@
-namespace IssueUnlockDoor;
+using IssueUnlockDoor;
+
+namespace EmployeeUnlockDoor;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        CreateHostBuilder(args).Build().Run();
-    }
+        var builder = WebApplication.CreateBuilder(args);
+        var services = builder.Services;
+        var configuration = builder.Configuration;
+        var env = builder.Environment;
 
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-    Host.CreateDefaultBuilder(args)
-        .ConfigureWebHostDefaults(webBuilder =>
+        services.Configure<CredentialSettings>(configuration.GetSection("CredentialSettings"));
+        services.AddHttpClient();
+        services.AddScoped<IssuerService>();
+        services.AddDistributedMemoryCache();
+
+        services.Configure<CookiePolicyOptions>(options =>
         {
-            webBuilder
-                .ConfigureKestrel(options => options.AddServerHeader = false)
-                .UseStartup<Startup>();
+            options.CheckConsentNeeded = context => false;
+            options.MinimumSameSitePolicy = SameSiteMode.None;
         });
+
+        services.AddRazorPages();
+
+        var app = builder.Build();
+
+        app.UseSecurityHeaders(SecurityHeadersDefinitions
+           .GetHeaderPolicyCollection(env.IsDevelopment()));
+
+
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Error");
+        }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+
+        app.UseRouting();
+
+        app.UseAuthorization();
+
+        app.MapRazorPages();
+        app.MapControllers();
+
+        app.Run();
+    }
 }
+
+
+
+
