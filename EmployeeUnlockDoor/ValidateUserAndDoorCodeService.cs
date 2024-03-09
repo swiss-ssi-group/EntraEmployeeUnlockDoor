@@ -12,7 +12,7 @@ public class ValidateUserAndDoorCodeService
 
         // simi check, only accept requests for "2023" and any upn
         // This code be updated once a month
-        if(doorCode == "2023")
+        if (doorCode == "2023")
             return (true, string.Empty);
 
         return (false, "Error, data code is incorrect, code is '2023'");

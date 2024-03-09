@@ -1,11 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Caching.Distributed;
-using VerifierInsuranceCompany.Services;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Caching.Distributed;
+using VerifierInsuranceCompany.Services;
 
 namespace EmployeeUnlockDoor.Pages.UnlockDoor;
 
@@ -49,7 +49,7 @@ public class UnlockDoorModel : PageModel
             new Claim("Mail", credentialData!.Employee.Mail, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("Surname", credentialData!.Employee.Surname, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("Photo", credentialData!.Employee.Photo, ClaimValueTypes.String, "damienbodsharepoint"),
-            new Claim("DoorCode", credentialData!.DoorCode, ClaimValueTypes.String, "damienbodsharepoint"), 
+            new Claim("DoorCode", credentialData!.DoorCode, ClaimValueTypes.String, "damienbodsharepoint"),
         };
 
         var userIdentity = new ClaimsIdentity(claims, "entraemployee");

@@ -1,5 +1,3 @@
-using System.Globalization;
-using System.Security.Cryptography;
 using IssueUnlockDoor.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
