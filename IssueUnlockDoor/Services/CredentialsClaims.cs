@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 namespace IssueUnlockDoor.Services;
 
 /// <summary>
-/// Verified Employee scheme
+/// self-issued-attestation
 /// </summary>
 public class CredentialsClaims
 {

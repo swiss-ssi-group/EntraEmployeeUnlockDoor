@@ -66,6 +66,10 @@ public class UnlockDoorModel : PageModel
 
         CacheData.RemoveFromCache(StatePresented, _distributedCache);
 
+        // Unlock the door now...
+        // The cookie can also allow a user to unlock the door without having to
+        // verify again for n minutes, or hours
+
         return Redirect($"~/UnlockDoor/Unlocked");
     }
 }
