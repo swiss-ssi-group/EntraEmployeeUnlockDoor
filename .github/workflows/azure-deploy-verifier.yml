@@ -4,7 +4,7 @@ name: Build and deploy EmployeeUnlockDoor
 env:
   AZURE_WEBAPP_NAME: employeeunlockdoor      # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: '.'             # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '8.0'                      # set this to the .NET Core version to use
+  DOTNET_VERSION: '9.0'                      # set this to the .NET Core version to use
 
 on:
   push:
@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
