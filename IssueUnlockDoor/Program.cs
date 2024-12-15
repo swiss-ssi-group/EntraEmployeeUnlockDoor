@@ -9,7 +9,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         var services = builder.Services;
         var configuration = builder.Configuration;
-        var env = builder.Environment;
+
+        services.AddSecurityHeaderPolicies()
+         .SetPolicySelector(ctx => SecurityHeadersDefinitions
+             .GetHeaderPolicyCollection(builder.Environment.IsDevelopment()));
+
 
         services.Configure<CredentialSettings>(configuration.GetSection("CredentialSettings"));
         services.AddHttpClient();
@@ -26,11 +30,10 @@ public class Program
 
         var app = builder.Build();
 
-        app.UseSecurityHeaders(SecurityHeadersDefinitions
-           .GetHeaderPolicyCollection(env.IsDevelopment()));
+        app.UseSecurityHeaders();
 
 
-        if (env.IsDevelopment())
+        if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
         }
