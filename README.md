@@ -26,7 +26,7 @@ https://employeeunlockdoor.azurewebsites.net
 
 ## History
 
-- 2024-12-15 .NET 9, Updated packages
+- 2024-12-15 .NET 9, Updated packages, updated deployments
 - 2024-03-09 Updated packages
 - 2023-07-27 Updated packages
 - 2023-07-08 Initial version
