@@ -48,7 +48,8 @@ public class UnlockDoorModel : PageModel
             new Claim("GivenName", credentialData!.Employee.GivenName, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("Mail", credentialData!.Employee.Mail, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("Surname", credentialData!.Employee.Surname, ClaimValueTypes.String, "damienbodsharepoint"),
-            new Claim("Photo", credentialData!.Employee.Photo, ClaimValueTypes.String, "damienbodsharepoint"),
+            // photo in cache results in to big a cookie
+            // new Claim("Photo", credentialData!.Employee.Photo, ClaimValueTypes.String, "damienbodsharepoint"),
             new Claim("DoorCode", credentialData!.DoorCode, ClaimValueTypes.String, "damienbodsharepoint"),
         };
 
