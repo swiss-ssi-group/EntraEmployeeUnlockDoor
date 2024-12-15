@@ -1,5 +1,7 @@
 # Entra Verified ID Employee Unlock Door flow
 
+[![.NET](https://github.com/swiss-ssi-group/EntraEmployeeUnlockDoor/actions/workflows/dotnet.yml/badge.svg)](https://github.com/swiss-ssi-group/EntraEmployeeUnlockDoor/actions/workflows/dotnet.yml)
+
 [Use multiple Microsoft Entra Verified ID credentials in a verification presentation](https://damienbod.com/2023/08/31/use-multiple-microsoft-entra-verified-id-credentials-in-a-verification-presentation/)
 
 ## Deployment testing
