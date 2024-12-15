@@ -27,6 +27,7 @@ public static class SecurityHeadersDefinitions
                 builder.AddBlockAllMixedContent();
                 builder.AddImgSrc().Self().From("data:");
                 builder.AddFontSrc().Self();
+                builder.AddFormAction().Self();
                 builder.AddStyleSrc().Self().UnsafeInline();
                 builder.AddBaseUri().Self();
                 builder.AddScriptSrc().UnsafeInline().WithNonce();

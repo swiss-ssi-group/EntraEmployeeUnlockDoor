@@ -9,6 +9,10 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddSecurityHeaderPolicies()
+         .SetPolicySelector(ctx => SecurityHeadersDefinitions
+             .GetHeaderPolicyCollection(builder.Environment.IsDevelopment()));
+
         builder.Services.AddScoped<VerifierService>();
         builder.Services.AddScoped<ValidateUserAndDoorCodeService>();
 
@@ -29,9 +33,7 @@ public class Program
 
         var app = builder.Build();
 
-        app.UseSecurityHeaders(
-            SecurityHeadersDefinitions.GetHeaderPolicyCollection(
-                app.Environment.IsDevelopment()));
+        app.UseSecurityHeaders();
 
         if (!app.Environment.IsDevelopment())
         {
