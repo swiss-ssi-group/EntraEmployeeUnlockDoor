@@ -8,19 +8,22 @@ namespace IssueUnlockDoor.Services;
 /// </summary>
 public class IssuanceRequestPayload
 {
-    [JsonPropertyName("includeQRCode")]
-    public bool IncludeQRCode { get; set; }
-    [JsonPropertyName("callback")]
-    public Callback Callback { get; set; } = new Callback();
     [JsonPropertyName("authority")]
     public string Authority { get; set; } = string.Empty;
+    [JsonPropertyName("includeReceipt")]
+    public bool IncludeReceipt { get; set; }
     [JsonPropertyName("registration")]
     public Registration Registration { get; set; } = new Registration();
+    [JsonPropertyName("callback")]
+    public Callback Callback { get; set; } = new Callback();
 
-    [JsonPropertyName("type")]
-    public string CredentialsType { get; set; } = string.Empty;
-    [JsonPropertyName("manifest")]
-    public string Manifest { get; set; } = string.Empty;
+
+    [JsonPropertyName("includeQRCode")]
+    public bool IncludeQRCode { get; set; }
+
+ 
+    [JsonPropertyName("requestedCredentials")]
+    public List<RequestedCredentials> RequestedCredentials { get; set; } = new List<RequestedCredentials>();
 }
 
 public class Callback
@@ -52,3 +55,30 @@ public class Pin
     [JsonPropertyName("length")]
     public int Length { get; set; } = 4;
 }
+
+public class RequestedCredentials
+{
+    [JsonPropertyName("type")]
+    public string CrendentialsType { get; set; } = string.Empty;
+    [JsonPropertyName("purpose")]
+    public string Purpose { get; set; } = string.Empty;
+    [JsonPropertyName("acceptedIssuers")]
+    public List<string> AcceptedIssuers { get; set; } = new List<string>();
+    [JsonPropertyName("configuration")]
+    public RequestedConfiguration Configuration { get; set; } = new RequestedConfiguration();
+}
+
+public class RequestedConfiguration
+{
+    [JsonPropertyName("validation")]
+    public RequestedConfigurationValidation Validation { get; set; } = new RequestedConfigurationValidation();
+}
+
+public class RequestedConfigurationValidation
+{
+    [JsonPropertyName("allowRevoked")]
+    public bool AllowRevoked { get; set; }
+    [JsonPropertyName("validateLinkedDomain")]
+    public bool ValidateLinkedDomain { get; set; }
+}
+

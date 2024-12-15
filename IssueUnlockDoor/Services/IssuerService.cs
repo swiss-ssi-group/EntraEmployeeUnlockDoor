@@ -26,9 +26,13 @@ public class IssuerService
     {
         var payload = new IssuanceRequestPayload();
 
-        payload.CredentialsType = "DoorCode";
-
-        payload.Manifest = $"{_credentialSettings.CredentialManifest}";
+        payload.RequestedCredentials =
+        [
+            new RequestedCredentials
+            {
+                CrendentialsType = "DoorCode"
+            }
+        ];
 
         var host = GetRequestHostName(request);
         payload.Callback.State = Guid.NewGuid().ToString();
