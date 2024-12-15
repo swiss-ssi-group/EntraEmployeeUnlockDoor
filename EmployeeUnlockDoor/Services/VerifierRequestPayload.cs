@@ -3,7 +3,8 @@ using System.Text.Json.Serialization;
 namespace VerifierInsuranceCompany.Services;
 
 /// <summary>
-/// https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/presentation-request-api#presentation-request-payload
+/// https://learn.microsoft.com/en-us/entra/verified-id/credential-design
+/// https://learn.microsoft.com/en-us/entra/verified-id/presentation-request-api
 /// </summary>
 public class VerifierRequestPayload
 {

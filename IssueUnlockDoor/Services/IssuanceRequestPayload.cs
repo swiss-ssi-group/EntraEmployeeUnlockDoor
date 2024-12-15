@@ -3,8 +3,9 @@ using System.Text.Json.Serialization;
 namespace IssueUnlockDoor.Services;
 
 /// <summary>
-/// https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/credential-design
-/// https://learn.microsoft.com/en-us/azure/active-directory/verifiable-credentials/presentation-request-api
+/// https://learn.microsoft.com/en-us/entra/verified-id/issuance-request-api
+/// https://learn.microsoft.com/en-us/entra/verified-id/credential-design
+/// https://learn.microsoft.com/en-us/entra/verified-id/presentation-request-api
 /// </summary>
 public class IssuanceRequestPayload
 {
