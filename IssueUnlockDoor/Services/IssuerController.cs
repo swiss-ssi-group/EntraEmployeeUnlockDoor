@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Options;
+using Microsoft.Graph.Models;
 
 namespace IssueUnlockDoor;
 
@@ -56,6 +57,7 @@ public class IssuerController : ControllerBase
                 var defaultRequestHeaders = _httpClient.DefaultRequestHeaders;
                 defaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
 
+                _log.LogWarning("Send payload: {payload}", JsonSerializer.Serialize(payload));
                 var res = await _httpClient.PostAsJsonAsync(_credentialSettings.Endpoint, payload);
 
                 //var test = await res.Content.ReadAsStringAsync();
