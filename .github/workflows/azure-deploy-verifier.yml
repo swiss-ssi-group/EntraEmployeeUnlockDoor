@@ -1,5 +1,5 @@
 
-name: Build and deploy EmployeeUnlockDoor
+name: Deploy EmployeeUnlockDoor
 
 env:
   AZURE_WEBAPP_NAME: employeeunlockdoor      # set this to the name of your Azure Web App

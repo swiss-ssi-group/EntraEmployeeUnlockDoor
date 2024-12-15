@@ -1,5 +1,5 @@
 
-name: Build and deploy Issue Door unlocked
+name: Deploy Issue Door unlocked
 
 env:
   AZURE_WEBAPP_NAME: issueunlockdoor   # set this to the name of your Azure Web App
