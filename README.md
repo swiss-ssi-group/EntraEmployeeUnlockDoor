@@ -6,7 +6,7 @@
 
 ## Deployment testing
 
-### Get onboarded to the Azure AD tenant
+### Get onboarded to the Entra ID tenant
 
 Contact the HR, or your IT admin and ask nicely for an account.
 
