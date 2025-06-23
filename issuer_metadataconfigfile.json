@@ -1,0 +1,137 @@
+{
+	"credential_issuer": "https://swiyu-oid4vci.bravegrass-6897e4b2.switzerlandnorth.azurecontainerapps.io",
+	"credential_endpoint": "https://swiyu-oid4vci.bravegrass-6897e4b2.switzerlandnorth.azurecontainerapps.io/api/v1/credential",
+	"version": "1.0",
+	"display": [
+	  {
+		"name": "Mein Test VC",
+		"locale": "de-CH",
+		"logo": {
+		  "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABD0lEQVR4nOyYsUrEQBRFVQYRYYUtZi0UC0vFUrBeYW1sF2E/wU623P8RkTSCf7FFipDaIkxhmkyapBgCYivz5sKAmynuaS9vOPDgcRlVXl/spcTB2AJ/oRCCQggKIVT8pJ4pfeqNnKmG1u5aaLpc6ecXb2Q26/Yji3s2uZVRCEEhBIUQFEKIl1rp2XS5Ckwe395J0WS+ODw7l1JX1zZ7ldJ9qVMfXd1cvn8GhKLpy+Lr6VFKk1sZhRAUQlAIIR5GZyqzWQcmJ/PFyf2DN2qyty7fSoODbWKEhtaGe/HvLRaEunzLTv1vUAhBIQSFEPGfDa7+7svCG4VvcRixwo5FciujEIJCCAohkhP6CQAA///lDD1tMy8HCAAAAABJRU5ErkJggg=="
+		}
+	  },
+	  {
+		"name": "My test vc",
+		"locale": "en-US",
+		"logo": {
+		  "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABD0lEQVR4nOyYsUrEQBRFVQYRYYUtZi0UC0vFUrBeYW1sF2E/wU623P8RkTSCf7FFipDaIkxhmkyapBgCYivz5sKAmynuaS9vOPDgcRlVXl/spcTB2AJ/oRCCQggKIVT8pJ4pfeqNnKmG1u5aaLpc6ecXb2Q26/Yji3s2uZVRCEEhBIUQFEKIl1rp2XS5Ckwe395J0WS+ODw7l1JX1zZ7ldJ9qVMfXd1cvn8GhKLpy+Lr6VFKk1sZhRAUQlAIIR5GZyqzWQcmJ/PFyf2DN2qyty7fSoODbWKEhtaGe/HvLRaEunzLTv1vUAhBIQSFEPGfDa7+7svCG4VvcRixwo5FciujEIJCCAohkhP6CQAA///lDD1tMy8HCAAAAABJRU5ErkJggg=="
+		}
+	  }
+	],
+	"credential_configurations_supported": {
+	  "my-test-vc": {
+		"format": "vc+sd-jwt",
+		"cryptographic_binding_methods_supported": [
+		  "did:jwk"
+		],
+		"credential_signing_alg_values_supported": [
+		  "ES256"
+		],
+		"proof_types_supported": {
+		  "jwt": {
+			"proof_signing_alg_values_supported": [
+			  "ES256"
+			]
+		  }
+		},
+		"display": [
+		  {
+			"name": "Demo-VC",
+			"locale": "de-CH",
+			"logo": {
+			  "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABD0lEQVR4nOyYsUrEQBRFVQYRYYUtZi0UC0vFUrBeYW1sF2E/wU623P8RkTSCf7FFipDaIkxhmkyapBgCYivz5sKAmynuaS9vOPDgcRlVXl/spcTB2AJ/oRCCQggKIVT8pJ4pfeqNnKmG1u5aaLpc6ecXb2Q26/Yji3s2uZVRCEEhBIUQFEKIl1rp2XS5Ckwe395J0WS+ODw7l1JX1zZ7ldJ9qVMfXd1cvn8GhKLpy+Lr6VFKk1sZhRAUQlAIIR5GZyqzWQcmJ/PFyf2DN2qyty7fSoODbWKEhtaGe/HvLRaEunzLTv1vUAhBIQSFEPGfDa7+7svCG4VvcRixwo5FciujEIJCCAohkhP6CQAA///lDD1tMy8HCAAAAABJRU5ErkJggg=="
+			},
+			"description": "Das ist ein Test-VC",
+			"background_color": "#ff69b4"
+		  },
+		  {
+			"name": "Demo-VC",
+			"locale": "en-US",
+			"logo": {
+			  "uri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABD0lEQVR4nOyYsUrEQBRFVQYRYYUtZi0UC0vFUrBeYW1sF2E/wU623P8RkTSCf7FFipDaIkxhmkyapBgCYivz5sKAmynuaS9vOPDgcRlVXl/spcTB2AJ/oRCCQggKIVT8pJ4pfeqNnKmG1u5aaLpc6ecXb2Q26/Yji3s2uZVRCEEhBIUQFEKIl1rp2XS5Ckwe395J0WS+ODw7l1JX1zZ7ldJ9qVMfXd1cvn8GhKLpy+Lr6VFKk1sZhRAUQlAIIR5GZyqzWQcmJ/PFyf2DN2qyty7fSoODbWKEhtaGe/HvLRaEunzLTv1vUAhBIQSFEPGfDa7+7svCG4VvcRixwo5FciujEIJCCAohkhP6CQAA///lDD1tMy8HCAAAAABJRU5ErkJggg=="
+			},
+			"description": "This is an test vc",
+			"background_color": "#4A412A"
+		  }
+		],
+		  "vct": "my-test-vc",
+		"claims": {
+		  "lastName": {
+			"mandatory": false,
+			"value_type": "string",
+			"display": [
+			  {
+				"locale": "de-CH",
+				"name": "Name"
+			  },
+			  {
+				"locale": "fr-CH",
+				"name": "Nom de famille"
+			  },
+			  {
+				"locale": "it-CH",
+				"name": "Cognome"
+			  },
+			  {
+				"locale": "en-US",
+				"name": "Last name"
+			  }
+			]
+		  },
+		  "firstName": {
+			"mandatory": false,
+			"value_type": "string",
+			"display": [
+			  {
+				"locale": "de-CH",
+				"name": "Vorname"
+			  },
+			  {
+				"locale": "fr-CH",
+				"name": "Prénom"
+			  },
+			  {
+				"locale": "it-CH",
+				"name": "Nome"
+			  },
+			  {
+				"locale": "en-US",
+				"name": "First name"
+			  }
+			]
+		  },
+		  "birthDate": {
+			"mandatory": true,
+			"value_type": "string",
+			"display": [
+			  {
+				"locale": "de-CH",
+				"name": "Geburtsdatum"
+			  },
+			  {
+				"locale": "fr-CH",
+				"name": "Date de naissance"
+			  },
+			  {
+				"locale": "it-CH",
+				"name": "Data di nascita"
+			  },
+			  {
+				"locale": "rm-CH",
+				"name": "Data di naschientscha"
+			  },
+			  {
+				"locale": "en-GB",
+				"name": "Date of birth"
+			  }
+			]
+		  }
+		},
+		"order": [
+		  "firstName",
+		  "lastName",
+		  "birthDate"
+		]
+	  }
+	}
+}

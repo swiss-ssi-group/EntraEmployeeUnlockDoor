@@ -1,0 +1,4 @@
+{
+	"issuer": "https://swiyu-oid4vci.bravegrass-6897e4b2.switzerlandnorth.azurecontainerapps.io",
+	"token_endpoint": "https://swiyu-oid4vci.bravegrass-6897e4b2.switzerlandnorth.azurecontainerapps.io/api/v1/token"
+}
